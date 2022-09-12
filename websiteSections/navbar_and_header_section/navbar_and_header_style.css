@@ -1,0 +1,250 @@
+/* Global style */
+*
+{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box; 
+    font-family: sans-serif ;
+}
+/* ******************************** navbar section ********************************  */
+.navbar
+{
+    /* navbarClass هيتحرك بحرية بالنسبة لل label ال */
+    position:relative;
+    /* border:2px solid #f00; */
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 30px 25px;
+    /* background-color: #555; */
+    /* header اكبر من ال z-index هي الطبق الاعلي حيث هعطيه navbar في اعلي شمال الصفحة وهخلي ال header فهثبت ال header يظهر فوق ال navbar عشان اخلي ال */
+    z-index: 999 ;
+}
+.navbar .navbarContainer
+{
+    /* border:2px solid #0f0; */
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    margin: 0px auto; 
+}
+/* ******** navbar logo part ******** */
+.navbar .navbarContainer .logoContainer
+{
+    /* border:2px solid #00f; */
+    width: 20%;
+    float: left ;
+    padding: 10px;
+}
+/* ******** navbar logo part : <a></a> ******** */
+.navbar .navbarContainer .logoContainer a
+{
+    text-decoration: none;
+    font-size: 35px;
+    text-transform: capitalize;
+    color: #fff;
+}
+/* ******** navbar logo part : <span></span> ******** */
+.navbar .navbarContainer .logoContainer a span
+{
+    font-size: 40px;
+    color:#ff0157 ;
+}
+/* ************************ menubar icon ************************ */
+/* navbarClass هيتحرك بحرية بالنسبة لل label ال */
+.navbar .navbarContainer .inputClass
+{
+    display: none ;
+}
+.navbar  .navbarContainer .labelClass
+{
+    position: absolute;
+    top:42px;
+    right:30px;
+    width:15px;
+    height:15px;
+    padding:15px;
+    background-size: cover;
+    background-image: url('../images/menu.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    /* when screen size from 0px to 894px , menubar icon will appear */
+    display: none;
+}
+.navbar .navbarContainer input:checked  ~  .labelClass
+{
+    background-image: url('../images/close.png');
+}
+/* ******** navbar links part ******** */
+.navbar .navbarContainer .links 
+{
+    /* border:2px solid #f0f; */
+    width: 80%;
+    float: right ;
+    text-align: right ;
+    padding-top: 23px;
+}
+.navbar .navbarContainer .links .linksContainter
+{  
+    list-style: none;
+}
+/* ******** navbar links part ******** */
+.navbar .navbarContainer .links li 
+{
+    display: inline-block;
+    margin-left:25px;
+}
+.navbar .navbarContainer .links li  a
+{
+    text-decoration: none;
+    font-size:18px; 
+    text-transform: capitalize;
+    color: #fff;
+} 
+.navbar  .navbarContainer .links .linksContainer  li  a:hover
+{
+    color:#ff0157;
+    transition: 0.5s;
+}
+/* في صف لوحده <li> , logo هيظهرهم وهيظهر كل menubar button هيكونوا مخفين ولما اضغط علي ال navbar and logo ال */
+.navbar .navbarContainer input:checked  ~  .links      ,
+.navbar .navbarContainer input:checked  ~  .logoClass  
+{
+    /* when click on menubar icon , navbar links will appear */
+    display: block;
+} 
+
+/* *************************************** navbar Resposive *************************************** */
+@media( min-width:0px) and (max-width:894px)
+{    
+    .navbar .navbarContainer  .links
+    {
+        width: 100%;
+        padding: 0 ;
+        /* when click on menubar icon , navbar links will appear */
+        display: none;
+    }
+    .navbar .navbarContainer  .links .linksContainter 
+    {
+        float:none;
+        display: block;
+        width: 100%; 
+    }
+    
+    /* ******** navbar logo part : <a></a> ******** */
+    .navbar .navbarContainer .logoContainer 
+    {
+        width: 100%;
+        display: block;
+        float:none;
+    }
+
+    .navbar  .navbarContainer .labelClass
+    {
+        display: block;
+    }
+    .navbar  .navbarContainer  .links .linksContainer   ,
+    .navbar  .navbarContainer  .logoContainer             
+    {
+        width: 100%;
+        float: none;
+    }
+    .navbar  .navbarContainer  .links .linksContainer 
+    {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    /* هياخذ الصف الثالث كله right <li> هياخذ الصف كله و كل logo هتاخذ الصف كله وال left <li> كل */
+    .navbar  .navbarContainer .links .linksContainer  li 
+    {
+        width: 100%;
+        margin-top: 40px;
+    }   
+}
+/* ******************************** header section ********************************  */
+.header
+{
+    /* header اكبر من ال z-index هي الطبق الاعلي حيث هعطيه navbar في اعلي شمال الصفحة وهخلي ال header فهثبت ال header يظهر فوق ال navbar عشان اخلي ال */
+    position: fixed; 
+    top: 0 ;
+    left: 0 ;
+    width: 100%;
+    height: 625px;
+    overflow: hidden;
+    border: 2px solid #ff0157 ;
+    background-image: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* header اكبر من ال z-index هي الطبق الاعلي حيث هعطيه navbar في اعلي شمال الصفحة وهخلي ال header فهثبت ال header يظهر فوق ال navbar عشان اخلي ال */
+    z-index: 111 ;
+    transition: 1s ;
+}
+.header .headerContainer
+{
+    position: absolute;
+    width: 65%;
+    height: auto;
+    overflow:hidden;
+    border: 2px solid #0f0 ;
+    /*  header section هياخذ 65 في المائة من عرض ال headerContainer ال */
+    /* يجي في المنتصف headerContainer ال عشان ال */
+    top: 50% ;
+    left:50% ;
+    transform: translate(-50%,-50%);
+    /*  headerContainer يكونوا في منتصف ال h2 , p عشان ال  */
+    text-align: center;
+}
+/* ----------------- h2 Of header ------------  */
+.header .headerContainer h2
+{
+    font-size: 80px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.header .headerContainer p
+{
+    font-size: 20px;
+    color: #fff;
+    padding: 10px;
+}
+.header .headerContainer  a 
+{
+    font-size: 20px;
+    color:#fff;
+    background-color: #ff0157;
+    display: inline-block ;
+    padding:10px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase ;
+    text-decoration: none ;
+    /*  عشان اعمل مسافة بين الحروف بتاع الكلمة اللي مكتوبة علي الزرار */
+    letter-spacing: 2px ;
+    transition: 0.5s ;
+}
+.header .headerContainer  a:hover
+{
+    letter-spacing: 6px ;
+}
+/* *************************************** navbar Resposive *************************************** */
+@media( min-width:0px) and (max-width:894px)
+{    
+    .header .headerContainer
+    {
+        display: none;
+    }
+
+}
+@media( min-width:894px ) and (max-width:1275px)
+{
+    .header .headerContainer h2
+    {
+        font-size: 55px;
+    }
+    .header .headerContainer p
+    {
+        font-size: 18px;
+    }
+
+}

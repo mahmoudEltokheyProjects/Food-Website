@@ -1,0 +1,124 @@
+/* Global style */
+*
+{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box; 
+    font-family: sans-serif ;
+}
+/* ******************************************* contact us section ******************************************* */
+.contactUs
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    /* border: 2px solid #f0f; */
+    background-image: url("../images/bg3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* smooth بشكل experts section بحيث لما احرك البكرة راسيا لاسفل مسافة اكبر من او تساوي 1970 بيكسل هيظهر experts sectionهخفي ال 
+    opacity: 1;
+    transition: 2s;
+    */
+}
+/* ********************** experts image and paragraph ************************* */
+.contactUs .contactUsContainer
+{
+    /* border: 2px solid #0ff;  */
+    width: 95% ;
+    height: auto;
+    overflow: hidden;
+    margin: 10px auto; 
+}
+/* ------------------------ experts : h2 , p ------------------------ */
+.contactUs .contactUsContainer h2 ,
+.contactUs .contactUsContainer p
+{
+    text-transform: capitalize;
+    text-align: center;
+}
+/* ------------------------ experts : <h2> ------------------------ */
+.contactUs .contactUsContainer h2 
+{
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* ------------------------ experts header : <p> ------------------------ */
+.contactUs .contactUsContainer p
+{
+    margin-bottom: 10px;
+}
+/* ------------------------ experts header : <h2> <span> ------------------------ */
+.contactUs .contactUsContainer h2 span
+{
+    font-size: 50px ;
+    color: #ff0157;
+}
+
+.contactUs .contactUsContainer .contactInfo 
+{
+    width:40%;
+    height: auto;
+    overflow: hidden ;
+    padding: 30px;
+    margin-top: 40px;
+    /* border: 2px solid #f00; */
+    box-shadow:  5px  2px 10px #999  ,
+                -5px -2px 10px#999   ,
+                -5px  2px 10px #999  ,
+                 5px -2px 10px #999 ,
+                -5px  2px 10px#999 ;
+}
+.contactUs .contactUsContainer  .contactInfo h3
+{
+    font-size: 25px ;
+    text-transform: capitalize;
+    margin: 15px;
+}
+
+.contactUs .contactUsContainer .contactInfo
+{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    
+}
+
+.contactUs .contactUsContainer .contactInfo form input[type="text"] ,
+.contactUs .contactUsContainer .contactInfo form input[type="email"] ,
+.contactUs .contactUsContainer .contactInfo form textarea
+{
+    display: block;
+    width: 95%;
+    padding: 10px; 
+    margin: 10px;
+    text-transform: capitalize;
+}
+.contactUs .contactUsContainer .contactInfo form input[type="submit"] 
+{
+    width: 100px;
+    height: 40px ;
+    padding: 5px; 
+    margin: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0 ;
+    outline: 0 ;
+    background-color: #ff0157;
+    cursor: pointer;
+}
+/* -------------------------------------- Responsive of contact us section -------------------------------------- */
+@media(min-width:0px) and (max-width:1000px)
+{
+    .contactUs .contactUsContainer .contactInfo
+    {
+        display: block;
+        width: 80%;
+        margin: 20px 30px;
+        background-color: #ffebce        
+    }
+
+}
+    

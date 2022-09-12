@@ -1,0 +1,133 @@
+/* Global style */
+*
+{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box; 
+    font-family: sans-serif ;
+}
+/* ******************************** our menu section ******************************** */
+.menu
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top:30px;
+    padding-bottom:20px;
+    /* border: 2px solid #00f; */
+    background-color:lightcyan;
+}
+/* ********************** menu image and paragraph ************************* */
+.menu .menuContainer
+{
+    /* border: 2px solid #ff0; */
+    width: 88% ;
+    height: auto;
+    overflow: hidden;
+    margin: 20px auto; 
+}
+/* ------------------------ meun : h2 , p ------------------------ */
+.menu .menuContainer .menuHeader ,
+.menu .menuContainer .menuPara
+{
+    text-transform: capitalize;
+    text-align: center;
+}
+/* ------------------------ meun : <h2> ------------------------ */
+.menu .menuContainer .menuHeader 
+{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+/* ------------------------ meun header : <p> ------------------------ */
+.menu .menuContainer .menuPara
+{
+    margin-bottom: 40px;
+}
+/* ------------------------ meun header : <h2> <span> ------------------------ */
+.menu .menuContainer .menuHeader span
+{
+    font-size: 50px ;
+    color: #ff0157;
+}
+/* ********************** menu image container ************************* */
+.menu .menuContainer .box
+{
+    width: 31%;
+    margin: 1%;
+    overflow: hidden;
+    float: left ;
+    /* border: 5px solid #0ff; */
+    background-color:#fff;
+    padding: 20px;
+/* out ودي معني ال box ولما اشيل الفارة من علي ال in وهذا معني menu في ال box لما احط الفارة علي اي  smooth  عشان الحركة اللي هتحصل تكون */
+    transition:.4s ease-in-out;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.menu .menuContainer .box .menuImgContainer
+{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 1.5s ease-in-out ;
+}
+/* ************************** <img> : menu image box <img> ************************** */
+.menu .menuContainer .box .menuImgContainer img
+{
+    width: 100%;
+    /* out ودي معني ال box ولما اشيل الفارة من علي ال in وهذا معني menu في ال box لما احط الفارة علي اي  smooth  عشان الحركة اللي هتحصل تكون */
+    transition:1s ease-in-out;
+}
+/* -------------- when hover on container of image in any box  -------------- */
+.menu .menuContainer .box .menuImgContainer:hover img 
+{
+/* للصورة بزاوية 45 درجة rotate حيث الطول والعرض  بقيم 1.6 من الحجم الاصلي ثم هيعمل <img> الاول هيقوم بتكبير حجم الtwo animation من ال 6 صناديف فهيتم عمل box في اي <img> اللي شايل ال container  لما احط الفارة علي اي  */
+    transform:scale(1.6,1.6) rotate(45deg);
+}
+/* -------------- when hover on box of image -------------- */
+/*  هيعمل ظل حولين هذا الصندوق menu من ال 6 صناديق بتوع ال box لما احط الفارة علي اي  */
+.menu .menuContainer .box:hover
+{
+    /* box-shadow : horizontal vertical blur color 
+        - ==> top ,left
+        + ==> bottom , right
+    */
+    box-shadow:  5px 2px 4px #555,
+                 5px 2px 4px#555 ,
+                -5px 2px 4px #555,
+                -5px 2px 4px#555 ,
+                 5px -2px 4px #555,
+                 5px -2px 4px#555;
+} 
+
+
+/* ************************** <p> : menu image box paragraph ************************** */
+.menu .menuContainer .box .boxImagePara
+{
+    font-weight: bold;
+    text-transform:capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* -------------------------------------- Responsive of menu section -------------------------------------- */
+@media(min-width:0px) and (max-width:767px)
+{
+    .menu .menuContainer .box
+    {
+        width: 98%;
+        float: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+}
+@media(min-width:768px) and (max-width:1000px)
+{
+    .menu .menuContainer .box
+    {
+        width: 48%;
+        float: left;
+        margin: 1% ;
+    }
+}

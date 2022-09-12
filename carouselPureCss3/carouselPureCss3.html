@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>carousel pure css3</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link rel="stylesheet" href="vendors/font-awesome.min.css">
+        <link rel="stylesheet" href="carouselPureCss3_style.css">
+    </head>
+    <body>
+        <!-- *************************************** slider container *************************************** -->
+        <div class="css-slider-wrapper">
+            <!-- ********************************* input : bullets ************************** -->
+            <input type="radio" name="slider" class="slide-radio1" id="slider_1" checked>
+            <input type="radio" name="slider" class="slide-radio2" id="slider_2" >
+            <input type="radio" name="slider" class="slide-radio3" id="slider_3" >
+            <input type="radio" name="slider" class="slide-radio4" id="slider_4" >
+            <!-- **************************************** label : bullets **************************************** -->
+            <div class="slider-pagination">
+                <!-- والعكس صحيح label تسمع ويحصل ذيها في ال input عشان اي حاجة تحصل في ال input بتاع ال id هتاخذ نفس قيمة ال label بتاع ال for ال -->
+                <label for="slider_1" class="page1"></label>
+                <label for="slider_2" class="page2"></label>
+                <label for="slider_3" class="page3"></label>
+                <label for="slider_4" class="page4"></label>
+            </div>
+            <!-- ************************* Arrow : next arrow : each page has previous arrow *********************** -->
+            <div class="next control">
+                <!-- next arrow in page 1 -->
+                <label for="slider_1" class="numb1">
+                    <i class="fa fa-arrow-circle-right"></i>
+                </label>
+                <!-- next arrow in page 2 -->
+                <label for="slider_2" class="numb2">
+                    <i class="fa fa-arrow-circle-right"></i>
+                </label>
+                <!-- next arrow in page 3 -->
+                <label for="slider_3" class="numb3">
+                    <i class="fa fa-arrow-circle-right"></i>
+                </label>
+                <!-- next arrow in page 4 -->
+                <label for="slider_4" class="numb4">
+                    <i class="fa fa-arrow-circle-right"></i>
+                </label>
+            </div>
+            <!-- **************************************** Arrow : previous arrow : each page has previous arrow ********************************** -->
+            <div class="previous control">
+                <!-- next arrow in page 1 -->
+                <label for="slider_1" class="numb1">
+                    <i class="fa fa-arrow-circle-left"></i>
+                </label>
+                <!-- previous arrow in page 2 -->
+                <label for="slider_2" class="numb2">
+                    <i class="fa fa-arrow-circle-left"></i>
+                </label>
+                <!-- previous arrow in page 3 -->
+                <label for="slider_3" class="numb3">
+                    <i class="fa fa-arrow-circle-left"></i>
+                </label>
+                <!-- previous arrow in page 4 -->
+                <label for="slider_4" class="numb4">
+                    <i class="fa fa-arrow-circle-left"></i>
+                </label>
+            </div>
+            <!-- ############################################# first page : first slide ############################### -->
+            <div class="slider slide1">
+                <!-- ******************** first page container : first slide container ******************** -->
+                <div>
+                    <!-- ******************** first page header : h2 ******************** -->
+                    <h2>Css Based slider</h2>
+                    <!-- ************** first page "back" button : Back button ********** -->
+                    <a href="#" class="button">Back</a>
+                    <!-- ********* first page "download" button : Download button ******** -->
+                    <a href="#" class="button">Download</a>
+                </div>
+            </div>
+            <!-- ############################################# second page : second slide ############################### -->
+            <div class="slider slide2">
+                <!-- ******************** second page container : second slide container ******************** -->
+                <div>
+                    <!-- ******************** second page header : h2 ******************** -->
+                    <h2>Css slider withour use javascript or jquery</h2>
+                    <!-- ************** second page "back" button : Back button ********** -->
+                    <a href="#" class="button">Back</a>
+                    <!-- ********* second page "download" button : Download button ******** -->
+                    <a href="#" class="button">Download</a>
+                </div>
+            </div>
+            <!-- ############################################# third page : third slide ############################### -->
+            <div class="slider slide3">
+                <!-- ******************** third page container : third slide container ******************** -->
+                <div>
+                    <!-- ******************** third page header : h2 ******************** -->
+                    <h2>full screen animation slider</h2>
+                    <!-- ************** third page "back" button : Back button ********** -->
+                    <a href="#" class="button">Back</a>
+                    <!-- ********* third page "download" button : Download button ******** -->
+                    <a href="#" class="button">Download</a>
+                </div>
+            </div>
+            <!-- ############################################# fourth page : fourth slide ############################### -->
+            <div class="slider slide4">
+                <!-- ******************** fourth page container : fourth slide container ******************** -->
+                <div>
+                    <!-- ******************** fourth page header : h2 ******************** -->
+                    <h2>Css3 slider</h2>
+                    <!-- ************** fourth page "back" button : Back button ********** -->
+                    <a href="#" class="button">Back</a>
+                    <!-- ********* fourth page "download" button : Download button ******** -->
+                    <a href="#" class="button">Download</a>
+                </div>
+            </div>
+
+
+        </div>
+
+    </body>
+</html>

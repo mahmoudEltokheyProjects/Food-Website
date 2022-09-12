@@ -1,0 +1,251 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title>slider</title>
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <style>
+            body
+            {
+                font-family: Arial, Helvetica, sans-serif ;
+                font-weight: 400 ;
+                background-color: #ecf0f1;
+            }
+            h1
+            {
+                font-size: 45px;
+                text-align: center;
+                margin: 1.2em 0 ; 
+                color: #555;
+            }
+            .carousel 
+            {
+				display: block;
+/*                border: 2px solid #0ff;*/
+                background-color: #fff;
+                text-align: center;
+                padding:  45px   0 ;
+                max-width: 750px;
+                height: auto;
+				overflow: hidden ;
+                position: relative;
+				top: 25%;
+				left: 25%;
+				transform: translate(-5%,5%);
+            }
+			.carousel input
+			{
+				display: none;
+			}
+            .carousel h2
+            {
+                margin: 0 ;
+                padding: 0 ;
+                font-size: 1em;
+                text-align: center;
+                color: #bbb;
+            }
+            /* -------------------------- <ul> of images -------------------------- */
+            .carousel .slides 
+            {
+				position: relative;
+				/*   جنب بعض four <li> عشان تحط ال */
+                width: 400%;
+                height: auto;
+                overflow: hidden;
+                padding-left: 0 ;
+/*                border: 2px solid #00f;*/
+                list-style: none;
+				/*  smooth حيث اي حركة هتستغرق 1 ثانية عشان تكون */
+                transition: 1s ; 
+            }
+             /* -------------------------- <li> of images : each image in carousel -------------------------- */
+            .carousel .slides  li
+            {
+				/*  هيكونوا جنب بعض <li> فبالتالي الاربعة  <ul> هتاخذ 1/4 من مساحة ال <li> كل */
+                width: 25%;
+                position: relative;
+				/* يكونوا جنب بعض four <li> عشان ال */
+                float: left;
+            } 
+            .carousel li p
+            {
+                margin-top: 0 ;
+            }
+            .carousel li p q
+            {
+                width: 90%;
+/*                border: 2px solid #0f0;*/
+                font-size: 20px;
+                font-weight: bold ;
+                color: #666 ;
+                margin: auto;
+            }
+            .carousel li  img
+            {
+/*                border: 2px solid #f00;*/
+                width: 3em; 
+                height: 3em ;
+                /* cover وتكون <li> عشان الصورة تملي ال  */
+                object-fit: cover; 
+                border-radius: 50% ;
+                margin-left: -15px;
+                margin-right:5px;
+                /* عشان النص اللي جنب الصورة يكون في المنتصف بمحاذة الصورة  */
+                vertical-align:middle; 
+            }
+            .carousel li span.auther
+            {
+                margin-top: 20px ;
+                font-size: 20px;
+                color: #f00 ;
+                display: block;
+            }
+            .carousel  .slideNavigation
+            {
+                list-style: none ;
+                text-align: center ;
+                bottom: 1em ;
+                width: 104px;
+                margin: 20px auto ;
+            }
+            
+            .carousel  .slideNavigation  label
+            {
+                float:left;
+                margin: 6px;
+                height: 10px;
+                display: block;
+                width: 10px;
+                border-radius: 50% ;
+                border: 2px solid #2980b9;
+                font-size: 0px ;
+                background-color: #fff ;
+            }
+            /* you have to repeat this with each slide ,  25% movement , 100/slidesNum  */
+            #radio-1:checked  ~   .slides
+            {
+                transform: translateX(0%);
+            }
+            #radio-2:checked  ~   .slides
+            {
+                transform: translateX(-25%);
+            }
+            #radio-3:checked  ~   .slides
+            {
+                transform: translateX(-50%);
+            }
+            #radio-4:checked  ~   .slides
+            {
+                transform: translateX(-75%);
+            }
+            .carousel .slideNavigation  label:hover
+            {
+                cursor: pointer;
+            }
+            /* you have to repeat this with each slide/dot  */
+            .carousel #radio-1:checked ~ .slideNavigation label#dotForRadio1 ,
+            .carousel #radio-2:checked ~ .slideNavigation label#dotForRadio2 ,
+            .carousel #radio-3:checked ~ .slideNavigation label#dotForRadio3 ,
+            .carousel #radio-4:checked ~ .slideNavigation label#dotForRadio4 
+            {
+                background-color: #2980b9 ;
+/*                border: 2px solid #f00;*/
+            }
+
+
+            @media( max-width:796px )
+            {
+                .carousel
+                {
+                    height: 8.5em;
+                }
+            }
+            @media( max-width:480px )
+            {
+                .carousel li p
+                {
+/*                    border: 2px solid #f00;*/
+                    padding-left : 5px ;
+                    padding-right : 5px ;
+                }
+                .carousel li p q
+                {
+/*                    border: 2px solid #0f0;*/
+                    font-size: 25px;
+                }
+                .carousel li img
+                {
+/*                    border: 2px solid #00f;*/
+                    width: 55px ;
+                    margin-left: -12px ;
+                    margin-right: 10px ;
+                }
+            }
+        
+        </style>
+    </head>
+    <body>
+        <h1>Css only carousel</h1>
+        <!-- //////////////////////////// slider container //////////////////////////// -->
+        <div class="carousel">
+            <!-- ************************************ bullets : <input> </input> ************************************ -->
+            <input type="radio" name="slides" id="radio-1" checked >
+            <input type="radio" name="slides" id="radio-2">
+            <input type="radio" name="slides" id="radio-3">
+            <input type="radio" name="slides" id="radio-4">
+
+            <ul class="slides">
+                <!-- ****************** person 1 ****************** -->
+                <li class="slide">
+                    <p> <q>this is happy man</q> </p>
+                    <span class="auther">
+                        <img src="images/testi1.jpg">
+                        mahmoud
+                    </span>
+                </li>
+                <!-- ****************** person 2 ****************** -->
+                <li class="slide">
+                    <p> <q>this is sad man</q> </p>
+                    <span class="auther">
+                        <img src="images/testi2.jpg">
+                        ahmed
+                    </span>
+                </li>
+                    <!-- ****************** person 3 ****************** -->
+                    <li class="slide">
+                    <p> <q>this is cool boy</q> </p>
+                    <span class="auther">
+                        <img src="images/testi3.jpg">
+                        ali
+                    </span>
+                </li>
+				<!-- ****************** person 4 ****************** -->
+                    <li class="slide">
+                    <p> <q>this is food chief </q> </p>
+                    <span class="auther">
+                        <img src="images/expert1.jpg">
+                        ali
+                    </span>
+                </li>
+            </ul>
+             <!-- ************************************ bullets : labels ************************************ -->
+             <div class="slideNavigation">
+				<label for="radio-1" id="dotForRadio1"></label>
+				<label for="radio-2" id="dotForRadio2"></label>
+				<label for="radio-3" id="dotForRadio3"></label>
+				<label for="radio-4" id="dotForRadio4"></label>
+            </div>
+        </div>
+        
+       
+    
+        <script> 
+        
+        </script>
+    </body>
+</html>
+
+        
+        

@@ -1,0 +1,849 @@
+/* Global style */
+*
+{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box; 
+    font-family: sans-serif ;
+}
+html , body
+{
+    /* smooth  بشكل section هيوديني لل navbar عشان لما اضغط علي اي لينك في ال */
+    scroll-behavior: smooth ;
+}
+/* ******************************** navbar section ********************************  */
+.navbar
+{
+    /* navbarClass هيتحرك بحرية بالنسبة لل label ال */
+    position: fixed;
+    /* border:2px solid #f00; */
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding: 30px 25px;
+    /* background-color: #555; */
+    /* header اكبر من ال z-index هي الطبق الاعلي حيث هعطيه navbar في اعلي شمال الصفحة وهخلي ال header فهثبت ال header يظهر فوق ال navbar عشان اخلي ال */
+    z-index: 999 ;
+}
+.navbar .navbarContainer
+{
+    /* border:2px solid #0f0; */
+    width: 90%;
+    height: auto;
+    overflow: hidden;
+    margin: 0px auto; 
+}
+/* ******** navbar logo part ******** */
+.navbar .navbarContainer .logoContainer
+{
+    /* border:2px solid #00f; */
+    width: 20%;
+    float: left ;
+    padding: 10px;
+}
+/* ******** navbar logo part : <a></a> ******** */
+.navbar .navbarContainer .logoContainer a
+{
+    text-decoration: none;
+    font-size: 35px;
+    text-transform: capitalize;
+    color: #fff;
+}
+/* ******** navbar logo part : <span></span> ******** */
+.navbar .navbarContainer .logoContainer a span
+{
+    font-size: 40px;
+    color:#ff0157 ;
+}
+/* ************************ menubar icon ************************ */
+/* navbarClass هيتحرك بحرية بالنسبة لل label ال */
+.navbar .navbarContainer .inputClass
+{
+    display: none ;
+}
+.navbar  .navbarContainer .labelClass
+{
+    position: absolute;
+    top:42px;
+    right:30px;
+    width:15px;
+    height:15px;
+    padding:15px;
+    background-size: cover;
+    background-image: url('../images/menu.png');
+    background-repeat: no-repeat;
+    cursor: pointer;
+    /* when screen size from 0px to 894px , menubar icon will appear */
+    display: none;
+}
+.navbar .navbarContainer input:checked  ~  .labelClass
+{
+    background-image: url('../images/close.png');
+}
+/* ******** navbar links part ******** */
+.navbar .navbarContainer .links 
+{
+    /* border:2px solid #f0f; */
+    width: 80%;
+    float: right ;
+    text-align: right ;
+    padding-top: 23px;
+}
+.navbar .navbarContainer .links .linksContainter
+{  
+    list-style: none;
+}
+/* ******** navbar links part ******** */
+.navbar .navbarContainer .links li 
+{
+    display: inline-block;
+    margin-left:25px;
+}
+.navbar .navbarContainer .links li  a
+{
+    text-decoration: none;
+    font-size:18px; 
+    text-transform: capitalize;
+    color: #fff;
+} 
+.navbar  .navbarContainer .links .linksContainer  li  a:hover
+{
+    color:#ff0157;
+    transition: 0.5s;
+}
+/* في صف لوحده <li> , logo هيظهرهم وهيظهر كل menubar button هيكونوا مخفين ولما اضغط علي ال navbar and logo ال */
+.navbar .navbarContainer input:checked  ~  .links      ,
+.navbar .navbarContainer input:checked  ~  .logoClass  
+{
+    /* when click on menubar icon , navbar links will appear */
+    display: block;
+} 
+
+/* *************************************** navbar Resposive *************************************** */
+@media( min-width:0px) and (max-width:894px)
+{    
+    .navbar .navbarContainer  .links
+    {
+        width: 100%;
+        padding: 0 ;
+        /* when click on menubar icon , navbar links will appear */
+        display: none;
+    }
+    .navbar .navbarContainer  .links .linksContainter 
+    {
+        float:none;
+        display: block;
+        width: 100%; 
+    }
+    
+    /* ******** navbar logo part : <a></a> ******** */
+    .navbar .navbarContainer .logoContainer 
+    {
+        width: 100%;
+        display: block;
+        float:none;
+    }
+
+    .navbar  .navbarContainer .labelClass
+    {
+        display: block;
+    }
+    .navbar  .navbarContainer  .links .linksContainer   ,
+    .navbar  .navbarContainer  .logoContainer             
+    {
+        width: 100%;
+        float: none;
+    }
+    .navbar  .navbarContainer  .links .linksContainer 
+    {
+        text-align: center;
+        margin-bottom: 25px;
+    }
+
+    /* هياخذ الصف الثالث كله right <li> هياخذ الصف كله و كل logo هتاخذ الصف كله وال left <li> كل */
+    .navbar  .navbarContainer .links .linksContainer  li 
+    {
+        width: 100%;
+        margin-top: 40px;
+    }   
+}
+/* ******************************** header section ********************************  */
+.header
+{
+    /* header اكبر من ال z-index هي الطبق الاعلي حيث هعطيه navbar في اعلي شمال الصفحة وهخلي ال header فهثبت ال header يظهر فوق ال navbar عشان اخلي ال */
+    position: relative; 
+    top: 0 ;
+    left: 0 ;
+    width: 100%;
+    height: 693px;
+    overflow: hidden;
+    /* border: 2px solid #ff0157 ; */
+    background-image: url("../images/bg.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.header .headerContainer 
+{
+    position: absolute;
+    width: 65%;
+    height: auto;
+    overflow:hidden;
+    /* border: 2px solid #0f0 ; */
+    /*  header section هياخذ 65 في المائة من عرض ال headerContainer ال */
+    /* يجي في المنتصف headerContainer ال عشان ال */
+    top: 50% ;
+    left:50% ;
+    transform: translate(-50%,-50%);
+    /*  headerContainer يكونوا في منتصف ال h2 , p عشان ال  */
+    text-align: center;
+}
+/* ----------------- h2 Of header ------------  */
+.header .headerContainer h2
+{
+    font-size: 79px;
+    color: #fff;
+    margin-bottom: 10px;
+}
+.header .headerContainer p
+{
+    color: #fff;
+}
+.header .headerContainer  a 
+{
+    font-size: 20px;
+    color:#fff;
+    background-color: #ff0157;
+    display: inline-block ;
+    padding:10px 30px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+    text-transform: uppercase ;
+    text-decoration: none ;
+    /*  عشان اعمل مسافة بين الحروف بتاع الكلمة اللي مكتوبة علي الزرار */
+    letter-spacing: 2px ;
+    transition: 0.5s ;
+}
+.header .headerContainer  a:hover
+{
+    letter-spacing: 6px ;
+}
+/* *************************************** navbar Resposive *************************************** */
+@media( min-width:0px) and (max-width:894px)
+{    
+    .header .headerContainer
+    {
+        display: none;
+    }
+}
+@media( min-width:895px) and (max-width:1275px)
+{
+    .header .headerContainer h2
+    {
+        font-size: 55px;
+    }
+    .header .headerContainer p
+    {
+        padding: 10px;
+    }
+}
+/* ******************************** about us section ********************************  */
+.aboutUs
+{
+    display: block;
+    height: auto;
+    overflow: hidden;
+    padding-top: 30px;
+    padding-bottom: 30px;
+    /* border: 2px solid #0ff; */
+    background-color:#ffebce;
+/* smooth بشكل about section بحيث لما احرك البكرة راسيا لاسفل مسافة اكبر من او تساوي 120 بيكسل هيظهر about sectionهخفي ال */
+    opacity: 0;
+    transition: 2s;
+}
+.aboutUs .aboutUsContainer
+{
+    width: 88%;
+    height: auto;
+    overflow: hidden;
+    /* put the container in the center of horizontal axis */
+    margin: 0 auto;
+    /* border: 2px solid #000; */
+}
+.aboutUs .aboutUsContainer .aboutUsInfo ,
+.aboutUs .aboutUsContainer .aboutUsImg
+{
+    width:50%;
+    float: left;
+    /* border: 2px solid #f00; */
+}
+/************** left part : aboutUsInfo ************* */
+.aboutUs .aboutUsContainer .aboutUsInfo 
+{
+    padding: 10px;
+}
+/* ************* h2 of aboutUsInfo ************* */
+.aboutUs .aboutUsContainer .aboutUsInfo h2
+{
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+/* ************* <h2> span of aboutUsInfo ************* */
+
+.aboutUs .aboutUsContainer .aboutUsInfo h2 span
+{
+    color: #ff0157;
+}
+/* ************* <p>  of aboutUsInfo ************* */
+.aboutUs .aboutUsContainer .aboutUsInfo p
+{
+    margin-bottom: 20px;
+    line-height: 1.5 ;
+}
+/* ************* right part of aboutUs section : aboutUsInfoImg ************* */
+.aboutUs .aboutUsContainer .aboutUsImg
+{
+    height: 100%;
+}
+/* ************* <img> : aboutUsInfoImg ************* */
+.aboutUs .aboutUsContainer .aboutUsImg img
+{
+    width: 100%;
+    height: 380px;
+}
+/* ---------------------------------- Responsive of about us section ---------------------------------- */
+@media(min-width:0px) and (max-width:949px)
+{
+    .aboutUs .aboutUsContainer .aboutUsInfo ,
+    .aboutUs .aboutUsContainer .aboutUsImg
+    {
+        width: 100%;
+        float: none;
+    }
+    .aboutUs .aboutUsContainer .aboutUsInfo h2
+    {
+        margin: 20px 0px ;
+        text-align: center;
+    }
+}
+@media(min-width:950px) and (max-width:1200px)
+{
+    /* *************  container of <img> : aboutUsInfoImg ************* */
+    .aboutUs .aboutUsContainer .aboutUsImg ,
+    .aboutUs .aboutUsContainer .aboutUsImg img
+    {
+        height:500px;
+    }
+    /* ************* <img> : aboutUsInfoImg ************* */
+    .aboutUs .aboutUsContainer .aboutUsImg img
+    {
+        width: 100%;
+        height: 500px;
+    }
+}
+/* ******************************** our menu section ******************************** */
+.menu
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top:30px;
+    padding-bottom:20px;
+    /* border: 2px solid #00f; */
+    background-color:lightcyan;
+    /* smooth بشكل menu section بحيث لما احرك البكرة راسيا لاسفل مسافة اكبر من او تساوي 600 بيكسل هيظهر menu sectionهخفي ال */
+    opacity: 0;
+    transition: 2s;
+}
+/* ********************** menu image and paragraph ************************* */
+.menu .menuContainer
+{
+    /* border: 2px solid #ff0; */
+    width: 88% ;
+    height: auto;
+    overflow: hidden;
+    margin: 20px auto; 
+}
+/* ------------------------ meun : h2 , p ------------------------ */
+.menu .menuContainer .menuHeader ,
+.menu .menuContainer .menuPara
+{
+    text-transform: capitalize;
+    text-align: center;
+}
+/* ------------------------ meun : <h2> ------------------------ */
+.menu .menuContainer .menuHeader 
+{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+/* ------------------------ meun header : <p> ------------------------ */
+.menu .menuContainer .menuPara
+{
+    margin-bottom: 40px;
+}
+/* ------------------------ meun header : <h2> <span> ------------------------ */
+.menu .menuContainer .menuHeader span
+{
+    font-size: 50px ;
+    color: #ff0157;
+}
+/* ********************** menu image container ************************* */
+.menu .menuContainer .box
+{
+    width: 31%;
+    margin: 1%;
+    overflow: hidden;
+    float: left ;
+    /* border: 5px solid #0ff; */
+    background-color:#fff;
+    padding: 20px;
+/* out ودي معني ال box ولما اشيل الفارة من علي ال in وهذا معني menu في ال box لما احط الفارة علي اي  smooth  عشان الحركة اللي هتحصل تكون */
+    transition:.4s ease-in-out;
+    border-radius: 30px;
+    cursor: pointer;
+}
+.menu .menuContainer .box .menuImgContainer
+{
+    position: relative;
+    overflow: hidden;
+    cursor: pointer;
+    transition: 1.5s ease-in-out ;
+}
+/* ************************** <img> : menu image box <img> ************************** */
+.menu .menuContainer .box .menuImgContainer img
+{
+    width: 100%;
+    /* out ودي معني ال box ولما اشيل الفارة من علي ال in وهذا معني menu في ال box لما احط الفارة علي اي  smooth  عشان الحركة اللي هتحصل تكون */
+    transition:1s ease-in-out;
+}
+/* -------------- when hover on container of image in any box  -------------- */
+.menu .menuContainer .box .menuImgContainer:hover img 
+{
+/* للصورة بزاوية 45 درجة rotate حيث الطول والعرض  بقيم 1.6 من الحجم الاصلي ثم هيعمل <img> الاول هيقوم بتكبير حجم الtwo animation من ال 6 صناديف فهيتم عمل box في اي <img> اللي شايل ال container  لما احط الفارة علي اي  */
+    transform:scale(1.6,1.6) rotate(45deg);
+}
+/* -------------- when hover on box of image -------------- */
+/*  هيعمل ظل حولين هذا الصندوق menu من ال 6 صناديق بتوع ال box لما احط الفارة علي اي  */
+.menu .menuContainer .box:hover
+{
+    /* box-shadow : horizontal vertical blur color 
+        - ==> top ,left
+        + ==> bottom , right
+    */
+    box-shadow:  5px 2px 4px #555,
+                 5px 2px 4px#555 ,
+                -5px 2px 4px #555,
+                -5px 2px 4px#555 ,
+                 5px -2px 4px #555,
+                 5px -2px 4px#555;
+} 
+
+
+/* ************************** <p> : menu image box paragraph ************************** */
+.menu .menuContainer .box .boxImagePara
+{
+    font-weight: bold;
+    text-transform:capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* -------------------------------------- Responsive of menu section -------------------------------------- */
+@media(min-width:0px) and (max-width:767px)
+{
+    .menu .menuContainer .box
+    {
+        width: 98%;
+        float: none;
+        margin-top: 20px;
+        margin-bottom: 20px;
+        padding: 20px;
+    }
+}
+@media(min-width:768px) and (max-width:1000px)
+{
+    .menu .menuContainer .box
+    {
+        width: 48%;
+        float: left;
+        margin: 1% ;
+    }
+}
+
+/* ******************************** our experts section ******************************** */
+.experts
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    padding-top:30px;
+    padding-bottom:20px;
+    /* border: 2px solid #00f;*/
+    background-color:lightsteelblue;
+    /* smooth بشكل experts section بحيث لما احرك البكرة راسيا لاسفل مسافة اكبر من او تساوي 1970 بيكسل هيظهر experts sectionهخفي ال */
+    opacity: 0;
+    transition: 2s;
+    
+}
+/* ********************** experts image and paragraph ************************* */
+.experts .expertsContainer
+{
+    /* border: 2px solid #ff0; */
+    width: 88% ;
+    height: auto;
+    overflow: hidden;
+    margin: 20px auto; 
+}
+/* ------------------------ experts : h2 , p ------------------------ */
+.experts .expertsContainer .expertsHeader ,
+.experts .expertsContainer .expertsPara
+{
+    text-transform: capitalize;
+    text-align: center;
+}
+/* ------------------------ experts : <h2> ------------------------ */
+.experts .expertsContainer .expertsHeader 
+{
+    font-size: 40px;
+    margin-bottom: 10px;
+}
+/* ------------------------ experts header : <p> ------------------------ */
+.experts .expertsContainer .expertsPara
+{
+    margin-bottom: 40px;
+}
+/* ------------------------ experts header : <h2> <span> ------------------------ */
+.experts .expertsContainer .expertsHeader span
+{
+    font-size: 50px ;
+    color: #ff0157;
+}
+/* ********************** experts image container ************************* */
+.experts .expertsContainer .boxExpert
+{
+    /* total width = width + margin_left + margin_right = 23 + 1 + 1 = 25% */
+    width: 23%;
+    margin: 1%;
+    margin-bottom: 30px;
+    overflow: hidden;
+    float: left ;
+    /* border: 5px solid #0ff; */
+    background-color:#fff;
+    padding: 5px;
+}
+.experts .expertsContainer .boxExpert .expertsImgContainer
+{
+    position: relative;
+    cursor: pointer;
+}
+.experts .expertsContainer .boxExpert .expertsImgContainer .overlayExpertsBtn
+{
+    width: 80px;
+    height: 35px;
+    padding: 15px;
+    background-color: transparent;
+    border: 2px solid #ff0157; 
+}
+/* ************************** experts container : image overlay layer ************************** */
+.experts .expertsContainer .boxExpert .expertsImgContainer .expertsImgOverlay
+{
+    position: absolute ;
+    top:0;
+    left: 0 ;
+    width: 100%;
+    height: 100%;
+    background-color: rgba(0, 0, 0, 0.5);
+    /* menu box علي ال hover هيظهر هذه الطبقة لما اعمل  */
+    opacity: 0 ;
+    transition: 0.8s ;
+}
+/* ************************** button of experts overlay layer ************************** */
+.experts .expertsContainer .boxExpert .expertsImgContainer .expertsImgOverlay .overlayExpertsBtn
+{
+    position: absolute ;
+    /*  overlay layer عشان الزرار يكون في منتصف ال */
+    top:50%;
+    left: 50%;
+    transform: translate(-50%,-50%);
+    padding: 10px;
+    width: 125px;
+    height: 50px;
+    cursor: pointer;
+    background-color: transparent;
+    /* border: 2px solid #ff0157; */
+    border-radius: 10px;
+    outline: 0 ;
+    text-decoration: none;
+    color: #fff;
+    font-size: 20px;
+    text-transform: capitalize;
+}
+.experts .expertsContainer .boxExpert .expertsImgContainer:hover .expertsImgOverlay
+{
+    opacity: 1 ;
+}
+
+/* ************************** <img> : experts image box <img> ************************** */
+.experts .expertsContainer .boxExpert .expertsImgContainer img
+{
+    width: 100%;
+}
+/* ************************** <p> : experts image box paragraph ************************** */
+.experts .expertsContainer .boxExpert .boxExpertsImagePara
+{
+    font-weight: bold;
+    text-transform:capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+}
+/* -------------------------------------- Responsive of experts section -------------------------------------- */
+@media(min-width:0px) and (max-width:767px)
+{
+    .experts .expertsContainer .boxExpert
+    {
+        width: 100%;
+        float: none;
+    }
+}
+@media(min-width:768px) and (max-width:1000px)
+{
+    .experts .expertsContainer .boxExpert
+    {
+        width: 48%;
+        float: left;
+        margin: 1% ;
+    }
+}
+
+/* ******************************** people Say section ******************************** */
+.peopleSay
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    /* border: 2px solid #0f0; */
+    background-image: url("../images/bg2.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    /* smooth بشكل experts section بحيث لما احرك البكرة راسيا لاسفل مسافة اكبر من او تساوي 1970 بيكسل هيظهر experts sectionهخفي ال */
+    opacity: 1;
+    transition: 2s;
+    padding-top:30px;
+    padding-bottom:50px;
+}
+/* ********************** peopleSay image and paragraph ************************* */
+.peopleSay .peopleSayContainer
+{
+    height: auto;
+    overflow: hidden;
+    /* border: 2px solid #ff0; */
+    width: 88% ;
+    
+    margin: 20px auto; 
+}
+/* ------------------------ peopleSay : h2 , p ------------------------ */
+.peopleSay .peopleSayContainer .peopleSayHeader ,
+.peopleSay .peopleSayContainer .peopleSayPara
+{
+    text-transform: capitalize;
+    text-align: center;
+    margin-top: 20px;
+}
+/* ------------------------ peopleSay : <h2> ------------------------ */
+.peopleSay .peopleSayContainer .peopleSayHeader 
+{
+    font-size: 40px;
+    margin-bottom: 10px;
+    color: #fff;
+}
+/* ------------------------ peopleSay : <h2> <span> ------------------------ */
+.peopleSay .peopleSayContainer .peopleSayHeader span
+{
+    font-size: 45px;
+    color: #ff0157;
+}
+/* ------------------------ peopleSay header : <p> ------------------------ */
+.peopleSay .peopleSayContainer .peopleSayPara
+{
+    margin-top: 20px;
+    margin-bottom: 50px;
+    color: #fff;
+}
+/* ------------------------ boxPeopleSay header : <h2> <span> ------------------------ */
+.peopleSay .peopleSayContainer .boxPeopleSay span
+{
+    display: block;
+    font-size:20px ;
+    font-weight: bold;
+    color: #ff0157;
+    margin-top:20px;
+}
+/* ********************** PeopleSay image container ************************* */
+.peopleSay .peopleSayContainer .boxPeopleSay
+{
+    /* total width = width + margin_left + margin_right = 31.3333 + 1 + 1 = 33.3333% */
+    width: 31.333%;
+    margin: 1%;
+    height: auto;
+    overflow: hidden;
+    float: left ;
+    /* border: 5px solid #0ff; */
+    background-color:#fff;
+    padding: 40px ;
+    text-align: center;
+}
+/* ************************** <img> : peopleSay image box <img> ************************** */
+.peopleSay .peopleSayContainer .boxPeopleSay .peopleSayImgContainer img
+{
+    width:110px;
+    height: 110px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+/* ************************** <p> : peopleSay image box paragraph ************************** */
+.peopleSay .peopleSayContainer .boxPeopleSay .boxPeopleSayImagePara
+{
+    font-weight: bold;
+    text-transform:capitalize;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    font-weight: normal;
+    font-style: italic;
+    line-height: 1.5 ;
+}
+/* -------------------------------------- Responsive of peopleSay section -------------------------------------- */
+@media(min-width:0px) and (max-width:690px)
+{
+    .peopleSay .peopleSayContainer .boxPeopleSay
+    {
+        width: 100%;
+        float: none;
+        margin-bottom: 20px;
+    }
+}
+@media(min-width:691px) and (max-width:1000px)
+{
+    .peopleSay .peopleSayContainer .boxPeopleSay
+    {
+        width: 48%;
+        float: left;
+        margin: 1% ;
+    }
+}
+/* ******************************************* contact us section ******************************************* */
+.contactUs
+{
+    width: 100%;
+    height: auto;
+    overflow: hidden;
+    /* border: 2px solid #f0f; */
+    background-image: url("../images/bg3.jpg");
+    background-repeat: no-repeat;
+    background-size: cover;
+    background-position: center;
+    /* smooth بشكل experts section بحيث لما احرك البكرة راسيا لاسفل مسافة اكبر من او تساوي 1970 بيكسل هيظهر experts sectionهخفي ال 
+    opacity: 1;
+    transition: 2s;
+    */
+}
+/* ********************** experts image and paragraph ************************* */
+.contactUs .contactUsContainer
+{
+    /* border: 2px solid #0ff;  */
+    width: 95% ;
+    height: auto;
+    overflow: hidden;
+    margin: 10px auto; 
+}
+/* ------------------------ experts : h2 , p ------------------------ */
+.contactUs .contactUsContainer h2 ,
+.contactUs .contactUsContainer p
+{
+    text-transform: capitalize;
+    text-align: center;
+}
+/* ------------------------ experts : <h2> ------------------------ */
+.contactUs .contactUsContainer h2 
+{
+    font-size: 40px;
+    margin-top: 20px;
+    margin-bottom: 20px;
+}
+/* ------------------------ experts header : <p> ------------------------ */
+.contactUs .contactUsContainer p
+{
+    margin-bottom: 10px;
+}
+/* ------------------------ experts header : <h2> <span> ------------------------ */
+.contactUs .contactUsContainer h2 span
+{
+    font-size: 50px ;
+    color: #ff0157;
+}
+
+.contactUs .contactUsContainer .contactInfo 
+{
+    width:40%;
+    height: auto;
+    overflow: hidden ;
+    padding: 30px;
+    margin-top: 40px;
+    /* border: 2px solid #f00; */
+    box-shadow:  5px  2px 10px #999  ,
+                -5px -2px 10px#999   ,
+                -5px  2px 10px #999  ,
+                 5px -2px 10px #999 ,
+                -5px  2px 10px#999 ;
+}
+.contactUs .contactUsContainer  .contactInfo h3
+{
+    font-size: 25px ;
+    text-transform: capitalize;
+    margin: 15px;
+}
+
+.contactUs .contactUsContainer .contactInfo
+{
+    margin-top: 50px;
+    margin-bottom: 10px;
+    margin-left: 50px;
+    
+}
+
+.contactUs .contactUsContainer .contactInfo form input[type="text"] ,
+.contactUs .contactUsContainer .contactInfo form input[type="email"] ,
+.contactUs .contactUsContainer .contactInfo form textarea
+{
+    display: block;
+    width: 95%;
+    padding: 10px; 
+    margin: 10px;
+    text-transform: capitalize;
+}
+.contactUs .contactUsContainer .contactInfo form input[type="submit"] 
+{
+    width: 100px;
+    height: 40px ;
+    padding: 5px; 
+    margin: 10px;
+    text-transform: uppercase;
+    color: #fff;
+    border: 0 ;
+    outline: 0 ;
+    background-color: #ff0157;
+    cursor: pointer;
+}
+/* -------------------------------------- Responsive of contact us section -------------------------------------- */
+@media(min-width:0px) and (max-width:1000px)
+{
+    .contactUs .contactUsContainer .contactInfo
+    {
+        display: block;
+        width: 80%;
+        margin: 20px 30px;
+        background-color: #ffebce        
+    }
+
+}
+    

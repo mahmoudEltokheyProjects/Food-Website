@@ -1,0 +1,109 @@
+/* Global style */
+*
+{
+    padding: 0 ;
+    margin: 0 ;
+    box-sizing: border-box; 
+    font-family: sans-serif ;
+}
+html , body
+{
+    /* smooth  بشكل section هيوديني لل navbar عشان لما اضغط علي اي لينك في ال */
+    scroll-behavior: smooth ;
+}
+/* ******************************** about us section ********************************  */
+.aboutUs
+{
+    display: block;
+    height: auto;
+    overflow: hidden;
+    padding-top: 20px;
+    padding-bottom: 30px;
+    /* border: 2px solid #0ff; */
+    background-color:#ffebce;
+/* smooth بشكل about section بحيث لما احرك البكرة راسيا لاسفل مسافة اكبر من او تساوي 120 بيكسل هيظهر about sectionهخفي ال */
+    opacity: 1;
+    transition: 2s;
+}
+.aboutUs .aboutUsContainer
+{
+    width: 88%;
+    height: auto;
+    overflow: hidden;
+    /* put the container in the center of horizontal axis */
+    margin: 0 auto;
+    /* border: 2px solid #000; */
+}
+.aboutUs .aboutUsContainer .aboutUsInfo ,
+.aboutUs .aboutUsContainer .aboutUsImg
+{
+    width:50%;
+    float: left;
+    /* border: 2px solid #f00; */
+}
+/************** left part : aboutUsInfo ************* */
+.aboutUs .aboutUsContainer .aboutUsInfo 
+{
+    padding: 10px;
+}
+/* ************* h2 of aboutUsInfo ************* */
+.aboutUs .aboutUsContainer .aboutUsInfo h2
+{
+    font-size: 40px;
+    margin-top: 10px;
+    margin-bottom: 10px;
+    text-transform: capitalize;
+}
+/* ************* <h2> span of aboutUsInfo ************* */
+
+.aboutUs .aboutUsContainer .aboutUsInfo h2 span
+{
+    color: #ff0157;
+}
+/* ************* <p>  of aboutUsInfo ************* */
+.aboutUs .aboutUsContainer .aboutUsInfo p
+{
+    margin-bottom: 20px;
+    line-height: 1.5 ;
+}
+/* ************* right part of aboutUs section : aboutUsInfoImg ************* */
+.aboutUs .aboutUsContainer .aboutUsImg
+{
+    height: 100%;
+}
+/* ************* <img> : aboutUsInfoImg ************* */
+.aboutUs .aboutUsContainer .aboutUsImg img
+{
+    width: 100%;
+    height: 380px;
+}
+/* ---------------------------------- Responsive of about us section ---------------------------------- */
+@media(min-width:0px) and (max-width:949px)
+{
+    .aboutUs .aboutUsContainer .aboutUsInfo ,
+    .aboutUs .aboutUsContainer .aboutUsImg
+    {
+        width: 100%;
+        float: none;
+    }
+    .aboutUs .aboutUsContainer .aboutUsInfo h2
+    {
+        margin: 20px 0px ;
+        text-align: center;
+    }
+}
+@media(min-width:950px) and (max-width:1200px)
+{
+    /* *************  container of <img> : aboutUsInfoImg ************* */
+    .aboutUs .aboutUsContainer .aboutUsImg ,
+    .aboutUs .aboutUsContainer .aboutUsImg img
+    {
+        height:500px;
+    }
+    /* ************* <img> : aboutUsInfoImg ************* */
+    .aboutUs .aboutUsContainer .aboutUsImg img
+    {
+        width: 100%;
+        height: 500px;
+    }
+}

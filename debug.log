@@ -1,0 +1,10 @@
+[0218/132215.685:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0218/144553.449:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0219/114014.749:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0219/132202.226:ERROR:process_info.cc(329)] VirtualQueryEx: Access is denied. (0x5)
+[0219/132202.226:ERROR:process_info.cc(556)] ReadMemoryInfo failed
+[0219/132202.226:ERROR:process_memory_win.cc(39)] Failed to initialize ProcessInfo.
+[0219/132202.226:ERROR:scoped_process_suspend.cc(40)] NtResumeProcess: An attempt was made to access an exiting process. (0xc000010a)
+[0222/114506.187:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0224/174031.431:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)
+[0308/175128.159:ERROR:directory_reader_win.cc(43)] FindFirstFile: The system cannot find the path specified. (0x3)

@@ -1,0 +1,242 @@
+body
+{
+    overflow: hidden;
+    width: 100% ;
+    height: 100% ;
+    padding: 0 ;
+    margin: 0 ;
+}
+/* -------------------- slider wrapper -------------------- */
+.css-slider-wrapper
+{
+    display: block ;
+    background-color: #ddd;
+    position: absolute ;
+    overflow: hidden;
+    left: 0 ;
+    right: 0 ;
+    top: 0 ;
+    bottom: 0 ;
+    border: 2px solid #f00;
+}
+/* --------------------- slider : each page[slide] ------------------------- */
+.slider
+{
+    width: 100% ;
+    height: 100%;
+    background-color: #f00;
+    position: absolute ;
+    top: 0 ;
+    left: 0 ;
+    opacity: 1 ;
+    z-index: 0 ;
+    display: flex ;
+    display: -webkit-flex ;
+    flex-direction: row ;
+    -webkit-flex-align: center ;
+    align-items:center;
+    justify-content: center;
+    transition: -webkit-transform 1600ms ;
+    transition: -webkit-transform 1600ms ,
+                        transform 1600ms ;
+    transform : scale(1);
+}
+/* ----------------- each slide background color ----------------- */
+/* ------------ slide 1 ------------- */
+.slide1
+{
+    background-color: #00bcd7;
+    left: 0 ;
+}
+/* ------------ slide 2 ------------- */
+.slide2
+{
+    background-color: #009788;
+    left: 100% ;
+}
+/* ------------ slide 3 ------------- */
+.slide3
+{
+    background-color: #ff5608;
+    left: 200% ;
+}
+/* ------------ slide 4 ------------- */
+.slide4
+{
+    background-color: #607d8d;
+    left: 300% ;
+}
+.slider h2
+{
+    color: #fff;
+    font-weight: 900 ;
+    text-transform: uppercase ;
+    font-size: 45px ;
+    line-height: 120%;
+    opacity: 0 ;
+    -webkit-transform: translateX(500px);
+    transform: translateX(500px);
+}
+.slider  .button
+{
+    color: #fff;
+    padding: 5px 30px ;
+    background-color: rgba(255,255,255,0.3);
+    text-decoration: none ;
+    opacity: 0 ;
+    font-size: 15px;
+    line-height: 30px ;
+    display: inline-block ;
+    transform: translateX(-500px);
+}   
+/*  هيظهروا بعد 1 ثانية h2 , two button [ back , download ] لما نتقل من صفحة لاخري فال */
+.slider h2 ,
+.slider .button
+{
+    -webkit-transition: transform 800ms , opacity 800ms ; 
+    transition: transform 800ms , opacity 800ms 
+    -webkit-transition-delay : 1s ;
+    transition-delay : 1s ;
+}
+/* ------------- Next and Previous arrow -------------------- */
+.control 
+{
+    position: absolute ;
+    top: 50% ;
+    width: 50px ;
+    height: 50px ;
+    margin-top: -25px;
+    z-index: 55 ;
+    border: 2px solid #00f;
+}
+/*-------------- 4 arrows[ previous , next ] : each page has  [ 1 next arrow ] and [ 1 previous arrow ] --------------  */
+.control label
+{
+    z-index:  0 ;
+    display: none ;
+    text-align: center ;
+    line-height: 50px ;
+    font-size: 50px ;
+    color: #fff;
+    cursor: pointer;
+    opacity: 0.2 ;
+    border: 2px solid #0ff;
+}
+.control label:hover
+{
+    opacity: 0.5 ;   
+}
+/* ---------- previous arrow ----------- */
+.previous 
+{
+    left: 1% ;
+}
+/* ---------- Next arrow ----------- */
+.next 
+{
+    right: 1% ;
+}
+/* ----------------------- slider pagger : container of 4 bullets ------------------------ */
+.slider-pagination
+{
+    position: absolute;
+    bottom: 20px;
+    left: 0 ;
+    width: 100% ;
+    text-align: center;
+    z-index: 1000 ;
+    border: 2px solid #ff0;
+}
+/* ----------------------- each bullet in the 4 bullets of slider : slider pagger : label ------------------------ */
+.slider-pagination label 
+{
+    width: 10px ;
+    height: 10px ;
+    border-radius: 50% ;
+    display: inline-block ;
+    background-color: rgba(255,255,255,0.2);
+    margin: 0 2px ;
+    cursor: pointer;
+    border: 2px solid #f00;
+}
+/* ----------------------- slider pagger  arrow event ------------------------ */
+/*   اللي موجود في الصفحة arrow هيظهر ال pervious , next سواء  bullet لما ضغط علي اي  */
+.slide-radio2:checked   ~ .previous .numb1 , 
+.slide-radio3:checked   ~ .previous .numb2 , 
+.slide-radio4:checked   ~ .previous .numb3 , 
+.slide-radio1:checked   ~ .next .numb2 , 
+.slide-radio2:checked   ~ .next .numb3 , 
+.slide-radio3:checked   ~ .next .numb4  
+{
+    display: block ;
+    z-index: 1 ;
+}
+/* ----------------------- slider pagger  event ------------------------ */
+/*  اللي لها نفس رقم الصفحة اللي هروح لها لونها ابيض غامق bullet هيتم وضع خلفية لل bullet لما اضغط علي اي  */
+
+.slide-radio1:checked   ~ .slider-pagination .page1 , 
+.slide-radio2:checked   ~ .slider-pagination .page2 , 
+.slide-radio3:checked   ~ .slider-pagination .page3 ,
+.slide-radio4:checked   ~ .slider-pagination .page4 
+{
+    background-color: rgba(255,255,255,1);
+}
+/* ----------------------- slider slide effect  ------------------------ */
+/* ----------- when click on first radio button == next button of page 1 == first bullet then No translate on x-axis ----------- */
+.slide-radio1:checked   ~  .slider
+{
+    -webkit-transform: translateX(0%);
+    transform: translateX(0%);
+}
+/* ----- when click on second radio button == next button of page 2 == second bullet then translate on x-axis with 100% this mean translate on page ----- */
+.slide-radio2:checked   ~  .slider
+{
+    -webkit-transform: translateX(-100%);
+    transform: translateX(-100%);
+}
+/* ----- when click on third radio button == next button of page 3 == second bullet then translate on x-axis with 100% this mean translate on page ----- */
+.slide-radio3:checked   ~  .slider
+{
+    -webkit-transform: translateX(-200%);
+    transform: translateX(-200%);
+}
+.slide-radio4:checked   ~  .slider
+{
+    -webkit-transform: translateX(-300%);
+    transform: translateX(-300%);
+}	
+/* whe click on any bullets , heade and two button of each page not move and will appear في كل صفحة h2 , back ,download buttonهيتم ظهور ال */
+.slide-radio1:checked   ~ .slide1    h2 , 
+.slide-radio2:checked   ~ .slide2    h2 , 
+.slide-radio3:checked   ~ .slide3    h2 ,
+.slide-radio4:checked   ~ .slide4    h2 ,
+.slide-radio1:checked   ~ .slide1    .button , 
+.slide-radio2:checked   ~ .slide2    .button  , 
+.slide-radio3:checked   ~ .slide3    .button  ,
+.slide-radio4:checked   ~ .slide4    .button  
+{
+    -webkit-transform: translateX(0);
+    transform: translateX(0);
+    opacity: 1 ;
+    border: 2px solid #ff5608;
+
+}
+@media only screen and (max-width:767px)
+{
+    .slider h2
+    {
+        font-size: 20px;
+    }
+    .slider  > div
+    {
+        padding: 0 2% ;
+    }
+    .control label 
+    {
+        font-size: 35px ;
+    }
+    .slider .button
+    {
+        padding: 0px  15px ;
+    }
+}
